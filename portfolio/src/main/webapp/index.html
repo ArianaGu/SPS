@@ -1,20 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Chaoying Gu's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>My name is Chaoying Gu and I am new to JS & html.</p>
-      <img src="images/hello.png"/>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaoying Gu Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
+	
+
+</head>
+
+<body>
+<div id="content">
+	
+  <header>
+<!--    <button class="nav-toggle" aria-label="toggle navigation"> <span class="hamburger"></span> </button>-->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#project" class="nav__link">My Projects  </a></li>
+        <li class="nav__item"><a href="#gallery" class="nav__link">Gallery</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact Me  </a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Introduction -->
+  <section class="intro" id="home">
+    <h2 class="section__title section__title--intro"> Hello, I am <strong>Chaoying Gu (顾超颖)</strong> </h2>
+    <p class="section__subtitle section__subtitle--intro"> I am a sophomore at Peking University, majoring in Electronic Engineering.</p>
+	 
+    <img src="images/intro.jpg" alt="" class="intro__img"> </section>
+  
+
+  <!-- My Projects -->
+  <section class="my-projects" id="project">
+    <h2 class="section__title section__title--projects">My Projects</h2>
+    <div class="projects">
+      <div class="projects">
+        <h3>FPGA Carpet Alarm</h3>
+        <p>This is the course project of <i>Digital Logic Design</i> in 2019-2020 spring sememster. My teammate and I used Verilog to build a special alarm which only stops alarming when you step on the carpet for 3s. </p>
+      </div>
+      <div class="projects">
+        <h3>AI Bot for the Game of Amazons</h3>
+        <p>This is the course project of <i>Introduction to Computation</i>. I chose the greedy search and appropriate pruning algorithm to implement the AI. I designed the UI independently using EasyX and realized the functions of saving, reading, regretting and duet fighting. </p>
+      </div>
+      <div class="projects">
+        <h3>Unity3D Game Escape Room</h3>
+        <p>The team that I lead completed this project just yesterday. At 2 weeks ago, no one ever had experience in Unity. I assigned the tasks for my team memebers and I have been learning C# independently to realize the function that we need. <a href = "https://www.bilibili.com/video/BV1ai4y1V79g">This</a> is a demo video of our game. </p>
+      </div>
     </div>
-  </body>
+    </section>
+</div>
+
+<!-- My Gallery-->
+<section class="my-gallery" id="gallery">
+  <h2 class="section__title section__title--gallery">Gallery</h2>
+  <p class="section__subtitle"></p>
+  <div class="portfolio"> 
+    <!-- Portfolio item 01 --> 
+    <a href="#" class="portfolio__item"> <img src="images/04.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 02 --> 
+    <a href="#" class="portfolio__item"> <img src="images/01.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 03 --> 
+    <a href="#" class="portfolio__item"> <img src="images/02.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 04 --> 
+    <a href="#" class="portfolio__item"> <img src="images/08.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 05 --> 
+    <a href="#" class="portfolio__item"> <img src="images/03.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 06 --> 
+    <a href="#" class="portfolio__item"> <img src="images/00.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 07 --> 
+    <a href="#" class="portfolio__item"> <img src="images/09.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 08 --> 
+    <a href="#" class="portfolio__item"> <img src="images/10.jpg" alt="" class="portfolio__img"> </a> 
+    
+    <!-- Portfolio item 09 --> 
+    <a href="#" class="portfolio__item"> <img src="images/11.jpg" alt="" class="portfolio__img"> </a> 
+     </div>
+    
+</section>
+
+<button onclick="getRandomQuoteUsingAsyncAwait()" class="btn">Fetch a quote!</button>
+<div id="quote-container">emm</div>
+
+<footer class="footer" id="contact">
+	<p>Contact me: <a href="mailto:vanessa00819@gmail.com" class="footer__link">vanessa00819@gmail.com</a>
+	</p>
+</footer>
+<img src="images/hello.png"/>
+</body>
 </html>
