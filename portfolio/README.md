@@ -1,6 +1,5 @@
-This directory is where you'll write all of your code!
+## My Portfolio Website
+http://cgu-sps-summer20.appspot.com/
 
-By default it contains a barebones web app. To run a local server, execute this
-command:
-
-mvn package appengine:run
+7-10: Use the HTML and css to organize the basic contents
+7-11: still learning about server
