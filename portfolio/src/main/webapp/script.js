@@ -32,3 +32,18 @@ function getComments() {
     document.getElementById('quote-container').innerText = quote;
   });
 }
+
+window.onload = getComments();
+/*
+function loadComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const CommentListElement = document.getElementById('comment-list');
+    statsListElement.innerHTML = '';
+  });
+}
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+*/
