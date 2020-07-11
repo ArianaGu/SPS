@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body onload="getComments()">
 <div id="content">
 	
   <header>
@@ -86,11 +86,21 @@
     <!-- Portfolio item 09 --> 
     <a href="#" class="portfolio__item"> <img src="images/11.jpg" alt="" class="portfolio__img"> </a> 
      </div>
-    
+     
+    <button onclick="getComments()" class="btn">Leave a Comment! </button>
 </section>
 
-<button onclick="getRandomQuoteUsingArrowFunctions()" class="btn">Fetch a quote!</button>
-<div id="quote-container">emm</div>
+<section class="my-projects" id="comments">
+    
+<form action="/data" method="POST">
+    <p>Your Comment:</p>
+    <input type="text" name="user-comment" value="">
+    <br/><br/>
+    <input type="submit" class="btn" value="Sumbit"/>
+</form>
+<div id="quote-container">Comments</div>
+
+</section>
 
 <footer class="footer" id="contact">
 	<p>Contact me: <a href="mailto:vanessa00819@gmail.com" class="footer__link">vanessa00819@gmail.com</a>

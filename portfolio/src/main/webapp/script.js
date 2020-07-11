@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function getRandomQuoteUsingArrowFunctions() {
+function getComments() {
   fetch('/data').then(response => response.text()).then((quote) => {
     document.getElementById('quote-container').innerText = quote;
   });

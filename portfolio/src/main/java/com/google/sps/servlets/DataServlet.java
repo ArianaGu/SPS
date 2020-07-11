@@ -31,10 +31,20 @@ public class DataServlet extends HttpServlet {
   
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    user_comments.add("Hi, welcome to leave a comment");
     Gson gson = new Gson();
     String json = gson.toJson(user_comments);
     response.setContentType("application/json;");
     response.getWriter().println(json);
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String comment = request.getParameter("user-comment");
+    user_comments.add(comment);
+    Gson gson = new Gson();
+    String json = gson.toJson(user_comments);
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
+    response.sendRedirect("/index.html");
   }
 }
