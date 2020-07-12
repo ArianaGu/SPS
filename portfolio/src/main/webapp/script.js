@@ -27,23 +27,35 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function getComments() {
+/*function getComments() {
   fetch('/data').then(response => response.text()).then((quote) => {
     document.getElementById('quote-container').innerText = quote;
   });
 }
 
-window.onload = getComments();
-/*
+window.onload = getComments();*/
+
 function loadComments() {
   fetch('/data').then(response => response.json()).then((comments) => {
-    const CommentListElement = document.getElementById('comment-list');
-    statsListElement.innerHTML = '';
+    const commentListElement = document.getElementById('comment-list');
+    comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
+    })
   });
 }
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+// window.onload = loadComments();
+
+function createCommentElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const nameElement = document.createElement('p');
+  nameElement.innerText = comment.name;
+
+  const contentElement = document.createElement('span'); 
+  contentElement.innerText = comment.content;
+
+  commentElement.appendChild(nameElement);
+  commentElement.appendChild(contentElement);
+  return commentElement;
 }
-*/

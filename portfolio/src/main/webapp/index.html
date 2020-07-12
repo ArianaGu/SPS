@@ -13,7 +13,7 @@
 
 </head>
 
-<body onload="getComments()">
+<body onload="loadComments()">
 <div id="content">
 	
   <header>
@@ -94,14 +94,20 @@
 
 <section class="my-projects" id="comments">
     
-<form action="/data" method="POST">
-    <p>Your Comment:</p>
-    <input type="text" name="user-comment" value="">
-    <br/><br/>
+<form action="/new-comment" method="POST">
+    <p>Name:</p>
+    <input type="text" name="name" value="">
+    <br/>
+
+    <p >Comment:</p>
+    <input type="text" name="content" value="">
+    <br/>
+    
     <input type="submit" class="btn" value="Sumbit"/>
 </form>
-<div id="quote-container">Comments</div>
-<ul class="projects" id="comment=list"></ul>
+
+<br/><br/>
+<ul id="comment-list"></ul>
 </section>
 
 <footer class="footer" id="contact">
