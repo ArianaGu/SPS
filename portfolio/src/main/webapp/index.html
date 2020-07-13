@@ -10,10 +10,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
 <script src="script.js"></script>
-
+    <style>
+      /* Form is hidden by default. */
+      .hidden {
+        display: none;
+      }
+    </style>
 </head>
 
-<body onload="loadComments()">
+<body onload="fetchBlobstoreUrlAndShowForm();loadComments()">
 <div id="content">
 	
   <header>
@@ -94,21 +99,36 @@
 
 <section class="my-projects" id="comments">
     
-<form action="/new-comment" method="POST">
-    <p>Name:</p>
-    <input type="text" name="name" value="">
-    <br/>
-
-    <p >Comment:</p>
-    <input type="text" name="content" value="">
-    <br/>
+    <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
+      <p>Name:</p>
+          <input type="text" name="name" value="">
+      <p>Comment:</p>
+      <textarea name="content"></textarea>
+      <br/>
+      <p>Upload an image:</p>
+      <input type="file" name="image" value="Choose">
+      <br/><br/>
+      <button>Submit</button>
+    </form>
     
-    <input type="submit" class="btn" value="Sumbit"/>
-</form>
-
 <br/><br/>
 <ul id="comment-list"></ul>
 </section>
+
+<section>
+    <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
+      <p>Name:</p>
+          <input type="text" name="name" value="">
+      <p>Comment:</p>
+      <textarea name="content"></textarea>
+      <br/>
+      <p>Upload an image:</p>
+      <input type="file" name="image" value="Choose">
+      <br/><br/>
+      <button>Submit</button>
+    </form>
+</section>
+
 
 <footer class="footer" id="contact">
 	<p>Contact me: <a href="mailto:vanessa00819@gmail.com" class="footer__link">vanessa00819@gmail.com</a>
