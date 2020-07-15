@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Chaoying Gu Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
-<script src="script.js"></script>
+    <title>Chaoying Gu Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
     <style>
       /* Form is hidden by default. */
       .hidden {
         display: none;
       }
     </style>
-</head>
+  </head>
 
 <body onload="fetchBlobstoreUrlAndShowForm();loadComments()">
 <div id="content">
@@ -110,25 +111,14 @@
       <br/><br/>
       <button>Submit</button>
     </form>
-    
 <br/><br/>
 <ul id="comment-list"></ul>
 </section>
 
-<section>
-    <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
-      <p>Name:</p>
-          <input type="text" name="name" value="">
-      <p>Comment:</p>
-      <textarea name="content"></textarea>
-      <br/>
-      <p>Upload an image:</p>
-      <input type="file" name="image" value="Choose">
-      <br/><br/>
-      <button>Submit</button>
-    </form>
+<section class="my-gallery">
+<h2 class="section__title section__title--gallery">COVID-19 News</h2>
+<div  align="center" id="chart-container"></div>
 </section>
-
 
 <footer class="footer" id="contact">
 	<p>Contact me: <a href="mailto:vanessa00819@gmail.com" class="footer__link">vanessa00819@gmail.com</a>
