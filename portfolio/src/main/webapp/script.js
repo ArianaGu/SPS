@@ -1,6 +1,29 @@
-/**
- * Adds a random greeting to the page.
- */
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+/** Fetches world covid data and uses it to create a chart. */
+function drawChart() {
+  fetch('/covid-data').then(response => response.json())
+  .then((covidData) => {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'date');
+    data.addColumn('number', 'total_cases');
+    Object.keys(covidData).forEach((date) => {
+      data.addRow([date, covidData[date]]);
+    });
+
+    const options = {
+      'title': 'Total Cases of COVID-19 Worldwide',
+      'width':600,
+      'height':500
+    };
+
+    const chart = new google.visualization.LineChart(
+        document.getElementById('chart-container'));
+    chart.draw(data, options);
+  });
+}
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -13,14 +36,6 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-/*function getComments() {
-  fetch('/data').then(response => response.text()).then((quote) => {
-    document.getElementById('quote-container').innerText = quote;
-  });
-}
-
-window.onload = getComments();*/
-
 function loadComments() {
   fetch('/data').then(response => response.json()).then((comments) => {
     const commentListElement = document.getElementById('comment-list');
@@ -29,7 +44,6 @@ function loadComments() {
     })
   });
 }
-// window.onload = loadComments();
 
 function createCommentElement(comment) {
   const commentElement = document.createElement('li');
@@ -37,18 +51,19 @@ function createCommentElement(comment) {
 
   const nameElement = document.createElement('p');
   nameElement.innerText = comment.name;
+  nameElement.style.color = "#8B81C3";
 
   const contentElement = document.createElement('span'); 
   contentElement.innerText = comment.content;
 
-  
   const imgElement = document.createElement('img');
+  imgElement.style.maxWidth = "200px";
   if(comment.imageUrl.substr(1,10) == "cloudshell"){
     imgElement.src = comment.imageUrl.substr(11);
   }
-  else
+  else{
     imgElement.src = comment.imageUrl;
-  
+  }
 
   commentElement.appendChild(nameElement);
   commentElement.appendChild(contentElement);
@@ -67,3 +82,4 @@ function fetchBlobstoreUrlAndShowForm() {
         messageForm.classList.remove('hidden');
       });
 }
+
